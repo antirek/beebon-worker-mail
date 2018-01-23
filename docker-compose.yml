@@ -1,0 +1,12 @@
+version: '2'
+services:
+  mailer:
+    image: antirek/beebon-worker-mail
+    environment:
+      - NODE_ENV=default
+      - NODE_CONFIG_DIR=/etc/beebon-worker-mail
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+      - "./config/:/etc/beebon-worker-mail"
+      - "/var/store/beebon/files:/var/store/files"
+    restart: always
