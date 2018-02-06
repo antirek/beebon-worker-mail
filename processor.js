@@ -112,9 +112,13 @@ class Processor {
             .then(message => {
                 return this.send(message);
             })
-            .then(done)
+            .then(() => {
+                console.log('end process');
+                done()
+            })
             .catch((err) => {
                 console.log('err:', err);
+                console.log('end process');
                 done(err);
             });
     }
