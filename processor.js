@@ -20,7 +20,7 @@ class Transporter {
     }
 
     getTransport(account) {
-        return this.transports[messageData.account];
+        return this.transports[account];
     }
 }
 
